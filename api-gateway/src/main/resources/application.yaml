@@ -19,7 +19,7 @@ environment: DEV
 route:
   route-config-map:
     user-svc:
-      path: "/user/**"
-      regex-path: "/user/(?<segment>.*)"
-      replacement-path: "/user/${segment}"
+      path: "/users/**"
+      regex-path: "/users/(?<segment>.*)"
+      replacement-path: "/users/${segment}"
       uri: "http://localhost:8000"
