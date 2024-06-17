@@ -1,0 +1,25 @@
+server:
+  port: 8888
+
+spring:
+  application:
+    name: api-gateway
+
+app:
+  api-prefix: /api
+
+google:
+  secret-manager:
+    project-id: 697886067979
+    secret-id: user-svc
+    version: latest
+
+environment: DEV
+
+route:
+  route-config-map:
+    user-svc:
+      path: "/user/**"
+      regex-path: "/user/(?<segment>.*)"
+      replacement-path: "/user/${segment}"
+      uri: "http://localhost:8000"
